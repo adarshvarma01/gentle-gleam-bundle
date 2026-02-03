@@ -22,8 +22,9 @@ const Home = () => {
         <section className="relative py-12 md:py-20">
           {/* Background decorations */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-pink/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-96 h-96 bg-pink/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet/25 rounded-full blur-3xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple/15 rounded-full blur-3xl" />
           </div>
 
           <div className="relative text-center max-w-3xl mx-auto">
@@ -39,7 +40,7 @@ const Home = () => {
             </h1>
 
             {/* Motivational Quote */}
-            <div className="bg-card rounded-2xl p-6 card-shadow border border-border mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <div className="bg-card rounded-2xl p-6 card-shadow gradient-border mb-8 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <p className="text-lg md:text-xl text-muted-foreground italic leading-relaxed">
                 "{randomQuote}"
               </p>
