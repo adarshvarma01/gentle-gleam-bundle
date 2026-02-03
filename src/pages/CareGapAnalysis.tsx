@@ -84,6 +84,12 @@ const CareGapAnalysis = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-primary mb-6">
             <HeartPulse className="w-8 h-8 text-white" />
           </div>
+          
+          {/* Free Analysis Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet/20 via-purple/20 to-pink/20 border border-violet/30 mb-4">
+            <span className="text-sm font-semibold gradient-text">✨ Free Mental Health Care Gap Analysis</span>
+          </div>
+          
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Care Gap</span> Analysis
           </h1>
@@ -95,7 +101,7 @@ const CareGapAnalysis = () => {
 
         {/* What is Care Gap */}
         <section className="py-8">
-          <div className="bg-gradient-to-br from-violet-light via-purple-light to-pink-light rounded-3xl p-8 md:p-12">
+          <div className="bg-card rounded-3xl p-8 md:p-12 gradient-border">
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
               What Are Mental Health Care Gaps?
             </h2>

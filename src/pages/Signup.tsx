@@ -27,17 +27,17 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 gradient-primary-soft">
+    <div className="min-h-screen flex items-center justify-center p-4 bg-background">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-pink/20 rounded-full blur-3xl float-animation" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-violet/20 rounded-full blur-3xl float-animation" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple/15 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-pink/30 rounded-full blur-3xl float-animation" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-violet/25 rounded-full blur-3xl float-animation" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-purple/20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Card */}
-        <div className="bg-card rounded-3xl p-8 card-shadow border border-border">
+        <div className="bg-card rounded-3xl p-8 card-shadow gradient-border">
           {/* Logo */}
           <div className="flex flex-col items-center mb-8">
             <div className="w-16 h-16 rounded-2xl gradient-primary flex items-center justify-center mb-4 soft-shadow">

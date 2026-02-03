@@ -7,37 +7,38 @@
 
 :root {
   --font-size: 16px;
-  --background: hsl(270, 50%, 98%);
-  --foreground: hsl(270, 50%, 10%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(270, 50%, 10%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(270, 50%, 10%);
-  --primary: hsl(270, 70%, 55%);
+  /* Dark theme as default */
+  --background: hsl(260, 20%, 6%);
+  --foreground: hsl(270, 20%, 95%);
+  --card: hsl(260, 18%, 10%);
+  --card-foreground: hsl(270, 20%, 95%);
+  --popover: hsl(260, 18%, 10%);
+  --popover-foreground: hsl(270, 20%, 95%);
+  --primary: hsl(270, 70%, 65%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(300, 50%, 96%);
-  --secondary-foreground: hsl(270, 50%, 20%);
-  --muted: hsl(270, 30%, 94%);
-  --muted-foreground: hsl(270, 20%, 45%);
-  --accent: hsl(330, 70%, 60%);
+  --secondary: hsl(280, 25%, 15%);
+  --secondary-foreground: hsl(270, 20%, 95%);
+  --muted: hsl(260, 20%, 14%);
+  --muted-foreground: hsl(270, 15%, 60%);
+  --accent: hsl(330, 70%, 65%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(270, 30%, 90%);
-  --input: hsl(270, 30%, 94%);
-  --input-background: hsl(0, 0%, 100%);
-  --switch-background: hsl(270, 30%, 85%);
+  --border: hsl(270, 20%, 18%);
+  --input: hsl(260, 20%, 14%);
+  --input-background: hsl(260, 18%, 12%);
+  --switch-background: hsl(270, 20%, 20%);
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: hsl(270, 70%, 55%);
+  --ring: hsl(270, 70%, 65%);
   
   /* Mental health theme colors */
-  --violet: hsl(270, 70%, 55%);
-  --purple: hsl(280, 65%, 50%);
-  --pink: hsl(330, 70%, 60%);
-  --violet-light: hsl(270, 60%, 95%);
-  --purple-light: hsl(280, 55%, 92%);
-  --pink-light: hsl(330, 60%, 95%);
+  --violet: hsl(270, 70%, 65%);
+  --purple: hsl(280, 65%, 60%);
+  --pink: hsl(330, 70%, 65%);
+  --violet-light: hsl(270, 40%, 15%);
+  --purple-light: hsl(280, 35%, 12%);
+  --pink-light: hsl(330, 40%, 15%);
   
   --radius: 0.75rem;
 }
@@ -183,9 +184,17 @@
   
   /* Glass effect */
   .glass-effect {
-    background: hsla(0, 0%, 100%, 0.8);
+    background: hsla(260, 20%, 10%, 0.8);
     backdrop-filter: blur(10px);
-    border: 1px solid hsla(270, 50%, 90%, 0.5);
+    border: 1px solid hsla(270, 50%, 30%, 0.3);
+  }
+  
+  /* Gradient border effect */
+  .gradient-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+                linear-gradient(135deg, var(--violet), var(--purple), var(--pink)) border-box;
   }
   
   /* Animations */

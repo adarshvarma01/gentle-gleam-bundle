@@ -62,6 +62,12 @@ const RiskAnalysis = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl gradient-primary mb-6">
             <AlertTriangle className="w-8 h-8 text-white" />
           </div>
+          
+          {/* Free Assessment Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-violet/20 via-purple/20 to-pink/20 border border-violet/30 mb-4">
+            <span className="text-sm font-semibold gradient-text">✨ 100% Free Mental Health Risk Assessment</span>
+          </div>
+          
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="gradient-text">Mental Health</span> Risk Analysis
           </h1>
