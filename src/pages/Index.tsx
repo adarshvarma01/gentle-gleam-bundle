@@ -1,133 +1,115 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import AnimationShowcase from "@/components/AnimationShowcase";
-import GlassCard from "@/components/GlassCard";
+import { SpaceBackground } from "@/components/SpaceBackground";
+import { GlassCard } from "@/components/GlassCard";
+import { ArrowRight, Brain, Heart, Sparkles } from "lucide-react";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative overflow-hidden">
+      <SpaceBackground />
+
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/20 via-accent-purple/10 to-accent-emerald/20"></div>
-        
-        <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto px-4">
-          <h1 className="font-bagel text-6xl md:text-8xl text-shadow-strong">
-            BAGEL FAT
+      <section className="relative min-h-screen flex items-center justify-center px-4">
+        <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/30 glow-animate">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-foreground/80">MindCare Mental Health</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            <span className="gradient-text">Mental Health</span>
+            <br />
+            Care Gap Analysis
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Демонстрация красивой дизайн-системы с анимациями и эффектами
+          
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Understanding and bridging the gaps in mental health care for a healthier tomorrow
           </p>
           
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center pt-4">
             <Button 
-              className="glass-effect hover:glass-effect gentle-animation px-8 py-3"
-              style={{ background: 'var(--accent-blue)', borderColor: 'rgba(255,255,255,0.3)' }}
+              className="btn-gradient rounded-xl px-8 h-14 text-base font-semibold group"
+              onClick={() => navigate("/login")}
             >
-              Начать
+              Get Started
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               variant="outline"
-              className="glass-effect hover:glass-effect gentle-animation px-8 py-3"
+              className="rounded-xl px-8 h-14 text-base border-border/50 hover:border-primary/50 hover:bg-primary/5"
+              onClick={() => navigate("/home")}
             >
-              Узнать больше
+              Learn More
             </Button>
           </div>
         </div>
-
-        {/* Floating elements */}
-        <div className="absolute top-20 left-20 w-4 h-4 bg-accent-blue rounded-full float-gentle opacity-60"></div>
-        <div className="absolute top-40 right-32 w-6 h-6 bg-accent-emerald rounded-full drift-left opacity-40"></div>
-        <div className="absolute bottom-32 left-1/4 w-5 h-5 bg-accent-purple rounded-full drift-right opacity-50"></div>
       </section>
 
-      {/* Animation Showcase */}
-      <section className="py-20 px-4">
+      {/* Features Section */}
+      <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 font-bagel">
-            Анимации и Эффекты
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text">
+            Our Mission
           </h2>
-          <AnimationShowcase />
-        </div>
-      </section>
-
-      {/* Glass Effects Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-accent-blue/5 via-accent-purple/5 to-accent-emerald/5">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 font-bagel">
-            Стеклянные Эффекты
-          </h2>
+          <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto">
+            We provide resources and tools to help understand mental health challenges and bridge care gaps.
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <GlassCard 
-              title="Стекло"
-              description="Основной стеклянный эффект с размытием и прозрачностью"
-              className="glass-effect"
-            />
-            <GlassCard 
-              title="Навигация"
-              description="Усиленный эффект для навигационных элементов"
-              className="glass-navbar"
-            />
-            <GlassCard 
-              title="Свечение"
-              description="Эффект с пульсирующим свечением"
-              className="glass-effect pulse-glow"
-            />
+            <GlassCard hover glow>
+              <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-5 glow-shadow">
+                <Brain className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Understand</h3>
+              <p className="text-muted-foreground">
+                Learn about common mental health disorders, their symptoms, and impact on daily life.
+              </p>
+            </GlassCard>
+
+            <GlassCard hover glow>
+              <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-5 glow-shadow">
+                <Sparkles className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Assess</h3>
+              <p className="text-muted-foreground">
+                Take free assessments to understand your mental health risk factors and care gaps.
+              </p>
+            </GlassCard>
+
+            <GlassCard hover glow>
+              <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-5 glow-shadow">
+                <Heart className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Heal</h3>
+              <p className="text-muted-foreground">
+                Discover resources and strategies to bridge care gaps and improve mental wellness.
+              </p>
+            </GlassCard>
           </div>
         </div>
       </section>
 
-      {/* Typography Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl font-bold font-bagel">Типографика</h2>
-          
-          <div className="space-y-6">
-            <h1 className="font-bagel text-shadow-medium">Заголовок H1 с Bagel Fat</h1>
-            <h2>Заголовок H2 с системным шрифтом</h2>
-            <h3>Заголовок H3 с улучшенной типографикой</h3>
-            <p>
-              Обычный текст с оптимизированными интервалами и читаемостью. 
-              Система поддерживает адаптивные размеры и правильные пропорции.
+      {/* CTA Section */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-strong rounded-3xl p-8 md:p-12 text-center glass-glow">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Start Your <span className="gradient-text">Free</span> Assessment
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              Take the first step towards understanding your mental health. Our assessments are 
+              completely free and confidential.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Color Palette */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 font-bagel">
-            Цветовая Палитра
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 text-center subtle-shadow gentle-animation hover:elevated-shadow">
-              <div 
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-                style={{ backgroundColor: 'var(--accent-blue)' }}
-              ></div>
-              <h3 className="text-xl font-semibold mb-2">Accent Blue</h3>
-              <p className="text-muted-foreground">#2563eb</p>
-            </Card>
-            
-            <Card className="p-8 text-center subtle-shadow gentle-animation hover:elevated-shadow">
-              <div 
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-                style={{ backgroundColor: 'var(--accent-emerald)' }}
-              ></div>
-              <h3 className="text-xl font-semibold mb-2">Accent Emerald</h3>
-              <p className="text-muted-foreground">#059669</p>
-            </Card>
-            
-            <Card className="p-8 text-center subtle-shadow gentle-animation hover:elevated-shadow">
-              <div 
-                className="w-20 h-20 rounded-full mx-auto mb-4"
-                style={{ backgroundColor: 'var(--accent-purple)' }}
-              ></div>
-              <h3 className="text-xl font-semibold mb-2">Accent Purple</h3>
-              <p className="text-muted-foreground">#7c3aed</p>
-            </Card>
+            <Button 
+              className="btn-gradient rounded-xl px-10 h-14 text-base font-semibold group"
+              onClick={() => navigate("/signup")}
+            >
+              Create Free Account
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </section>
