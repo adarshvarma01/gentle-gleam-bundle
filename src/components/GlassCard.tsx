@@ -1,32 +1,32 @@
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
 interface GlassCardProps {
-  title: string;
-  description: string;
+  children: ReactNode;
   className?: string;
+  hover?: boolean;
+  glow?: boolean;
 }
 
-const GlassCard = ({ title, description, className }: GlassCardProps) => {
+export const GlassCard = ({ 
+  children, 
+  className, 
+  hover = false,
+  glow = false 
+}: GlassCardProps) => {
   return (
-    <div className={cn("p-8 rounded-lg gentle-animation", className)}>
-      <h3 className="text-2xl font-semibold mb-4 text-shadow-medium">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
-      
-      {/* Decorative elements */}
-      <div className="mt-6 flex space-x-2">
-        <div 
-          className="w-3 h-3 rounded-full"
-          style={{ backgroundColor: 'var(--accent-blue)' }}
-        ></div>
-        <div 
-          className="w-3 h-3 rounded-full"
-          style={{ backgroundColor: 'var(--accent-emerald)' }}
-        ></div>
-        <div 
-          className="w-3 h-3 rounded-full"
-          style={{ backgroundColor: 'var(--accent-purple)' }}
-        ></div>
-      </div>
+    <div
+      className={cn(
+        "relative rounded-3xl p-6 md:p-8",
+        "bg-card/60 backdrop-blur-xl",
+        "border border-border/50",
+        "shadow-xl shadow-violet/5",
+        hover && "transition-all duration-500 hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-violet/10 hover:border-primary/30",
+        glow && "before:absolute before:inset-0 before:rounded-3xl before:p-[1px] before:bg-gradient-to-br before:from-violet/30 before:via-purple/20 before:to-pink/30 before:-z-10 before:blur-sm",
+        className
+      )}
+    >
+      {children}
     </div>
   );
 };
